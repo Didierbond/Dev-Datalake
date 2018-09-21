@@ -1,1 +1,208 @@
-SQL files
+…or create a new repository on the command line
+echo "# Dev-Datalake" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/Didierbond/Dev-Datalake.git
+git push -u origin master
+
+
+
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   app.js
+        new file:   index.html
+
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ git commit
+[master (root-commit) 4b502fd] Initial commit
+ 2 files changed, 8 insertions(+)
+ create mode 100644 app.js
+ create mode 100644 index.html
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   app.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ git add .
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ git commit -m 'changed app.js'
+[master 9b41eea] changed app.js
+ 1 file changed, 1 insertion(+)
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ touch .gitignore
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ touch log.txt
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ git add .
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   .gitignore
+
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ git add .
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   .gitignore
+        new file:   dir1/app1.js
+
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ git branch login
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   .gitignore
+        new file:   dir1/app1.js
+
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ git commit -m 'another change'
+[master b8f8105] another change
+ 2 files changed, 3 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 dir1/app1.js
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ git checkout
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ git checkout login
+Switched to branch 'login'
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (login)
+$ touch login.html
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (login)
+$ git add .
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (login)
+$ git commit -m 'login form'
+[login a8018df] login form
+ 4 files changed, 4 insertions(+)
+ create mode 100644 dir2/app2.js
+ create mode 100644 log.txt
+ create mode 100644 login.html
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (login)
+$ git checkout master
+Switched to branch 'master'
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ git merge login
+Merge made by the 'recursive' strategy.
+ dir2/app2.js | 1 +
+ index.html   | 1 +
+ log.txt      | 1 +
+ login.html   | 1 +
+ 4 files changed, 4 insertions(+)
+ create mode 100644 dir2/app2.js
+ create mode 100644 log.txt
+ create mode 100644 login.html
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ git remote
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ git remote add origin https://github.com/Didierbond/Myappsample.git
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ git remote
+origin
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ git push -u origin master
+Enumerating objects: 20, done.
+Counting objects: 100% (20/20), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (20/20), 1.52 KiB | 258.00 KiB/s, done.
+Total 20 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), done.
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/Didierbond/Myappsample/pull/new/master
+remote:
+To https://github.com/Didierbond/Myappsample.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ touch README.md
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ git add .
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ git commit -m 'Added readme'
+[master cb57d7c] Added readme
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.md
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 285 bytes | 285.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Didierbond/Myappsample.git
+   c9ef362..cb57d7c  master -> master
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ git pull
+Already up to date.
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$ ^Cuch README.md
+
+bondn@P36809 MINGW64 ~/Documents/Myapp (master)
+$
